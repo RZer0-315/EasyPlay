@@ -5,4 +5,4 @@
 
 **Problem & User:** Helps both locals & tourists who are looking for music events around the city.
 
-**Core Loop (3–5 sentences):** User action The user selects a venue → state change shows → render → outcome.
+**Core Loop (3–5 sentences):** User action The user selects a venue → state change Details of venues and past/upcoming shows → Options to save venue/shows pops up → User saves venues and events.

@@ -1,7 +1,8 @@
 # Roadmap
 ## MVP (Sprint 2)
-- Feature A …
-- Feature B …
+- Map with marked venues
+- Clicking on visual indicator for venue shows details
+- 
 - Vertical slice path: input → state → render → GET → PUT
 ## Full (Sprint 3)
 - Enhancement 1 …
