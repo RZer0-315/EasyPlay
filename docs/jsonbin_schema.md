@@ -6,5 +6,4 @@
 PUT payload (truncated): …
 Result (truncated): …
 ## Merge Policy
-- Last-write-wins (timestamp) per item, de-dupe by id
-- Or per-record versioning when domain warrants it
+- Per-record versioning when domain warrants it
