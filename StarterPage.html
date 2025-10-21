@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Venue Map Template</title>
+  <style>
+    :root{
+      --bg: #f5f6f7;
+      --panel: #dbdbdb;
+      --panel-border: #efefef;
+      --map-bg: #e6f3fd;
+      --accent: #ff0b0b; /* red button */
+      --text: #1b1b1b;
+      --muted: #5a5a5a;
+      --radius: 8px;
+      --radius-lg: 10px;
+    }
+
+    /* Basic reset */
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .page{
+      max-width: 1100px;
+      margin: 18px auto;
+      padding: 0 12px;
+      display: grid;
+      grid-template-rows: auto 76px; /* main area + filters bar */
+      gap: 14px;
+    }
+
+    /* Top section: left details + right map */
+    .top{
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 14px;
+    }
+
+    .panel{
+      background: var(--panel);
+      border-radius: var(--radius-lg);
+      border: 8px solid var(--panel-border); /* to mimic thick light frame in mockup */
+      overflow: hidden;
+    }
+
+    .left{
+      padding: 18px 16px 22px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+      min-height: 420px;
+    }
+
+    .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .row .label{
+      font-weight: 600;
+    }
+
+    .subtle{
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .other-details{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 14px;
+      white-space: pre-line; /* keep intended breaks */
+    }
+
+    .cta{
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: white;
+      border-radius: 4px;
+      min-height: 150px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 26px;
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.06) inset;
+    }
+
+    .map{
+      background: var(--map-bg);
+      min-height: 420px;
+      position: relative;
+    }
+    .map::after{
+      /* Centered pin (simple SVG) — replace with your map/component later */
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 54px;
+      height: 54px;
+      transform: translate(-50%, -60%);
+      background: no-repeat center/contain
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.24 7-12a7 7 0 1 0-14 0c0 4.76 7 12 7 12Z" fill="%23379a3a"/><circle cx="12" cy="10" r="3.25" fill="%23ffffff"/><path d="M12 22s7-7.24 7-12a7 7 0 1 0-14 0c0 4.76 7 12 7 12Zm0-8.75A3.25 3.25 0 1 1 12 6.75a3.25 3.25 0 0 1 0 6.5Z" fill="%23000000" opacity=".08"/></svg>');
+    }
+
+    /* Bottom filters bar */
+    .filters{
+      display: flex;
+      align-items: center;
+      padding: 18px 22px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 900px){
+      .top{ grid-template-columns: 1fr; }
+      .left, .map{ min-height: 360px; }
+      .filters{ font-size: 22px; }
+      .cta{ font-size: 22px; min-height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Venue and Map Layout">
+    <!-- Top section -->
+    <section class="top">
+      <!-- Left details panel -->
+      <aside class="panel left" aria-labelledby="venue-heading">
+        <header class="row" id="venue-heading" aria-live="polite">
+          <div>
+            <div class="subtle">Venue Name</div>
+            <div><!-- Replace with dynamic venue name --></div>
+          </div>
+          <div class="subtle">Venue Address</div>
+        </header>
+
+        <section>
+          <div class="subtle" style="margin-bottom:8px;">Other venue details:</div>
+          <div class="other-details">
+sss
+ss
+s
+s
+ss
+s
+s
+          </div>
+        </section>
+
+        <a class="cta" href="#" aria-label="View past and current shows">
+          <div>Past and Current</div>
+          <div>shows</div>
+        </a>
+      </aside>
+
+      <!-- Right map panel -->
+      <section class="panel map" role="region" aria-label="Map area">
+        <!-- Drop your actual map component inside this container later -->
+      </section>
+    </section>
+
+    <!-- Bottom filters bar -->
+    <section class="panel filters" role="region" aria-label="Map Filters">
+      Map Filters
+    </section>
+  </main>
+</body>
+</html>
