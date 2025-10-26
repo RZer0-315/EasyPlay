@@ -2,9 +2,19 @@
 ## Schema
 - Document shape …
 - Key fields: 
-  - Users [
-    - 
-  - ]
+"Users" [
+  {
+    "id": 
+    "name":
+    "venues"[
+      {"id": , "name"...etc}, {more}
+    ]
+    "shows"[
+      {"id": , "name"...etc}, {more}
+    ]
+  },
+  {more}
+]
 ## Examples
 PUT payload (truncated): …
 Result (truncated): …
