@@ -4,6 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Venue Map Template</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
   <style>
     :root{
       --bg: #f5f6f7;
@@ -95,14 +102,16 @@
       padding: 18px;
       box-shadow: 0 1px 0 rgba(0,0,0,.06) inset;
     }
-
+    /*
     .map{
       background: var(--map-bg);
       min-height: 420px;
       position: relative;
     }
+
+    
     .map::after{
-      /* Centered pin (simple SVG) — replace with your map/component later */
+      /* Centered pin (simple SVG) — replace with your map/component later 
       content: "";
       position: absolute;
       left: 50%;
@@ -113,6 +122,9 @@
       background: no-repeat center/contain
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.24 7-12a7 7 0 1 0-14 0c0 4.76 7 12 7 12Z" fill="%23379a3a"/><circle cx="12" cy="10" r="3.25" fill="%23ffffff"/><path d="M12 22s7-7.24 7-12a7 7 0 1 0-14 0c0 4.76 7 12 7 12Zm0-8.75A3.25 3.25 0 1 1 12 6.75a3.25 3.25 0 0 1 0 6.5Z" fill="%23000000" opacity=".08"/></svg>');
     }
+*/
+    #map { height: 400px; }
+
 
     /* Bottom filters bar */
     .filters{
@@ -135,7 +147,7 @@
 <body>
   <main class="page" aria-label="Venue and Map Layout">
     <!-- Top section -->
-    <section class="top">
+    <div class="top">
       <!-- Left details panel -->
       <aside class="panel left" aria-labelledby="venue-heading">
         <header class="row" id="venue-heading" aria-live="polite">
@@ -166,15 +178,14 @@ s
       </aside>
 
       <!-- Right map panel -->
-      <section class="panel map" role="region" aria-label="Map area">
-        <!-- Drop your actual map component inside this container later -->
-      </section>
-    </section>
+       <div id="map"></div>
+    </div>
 
     <!-- Bottom filters bar -->
     <section class="panel filters" role="region" aria-label="Map Filters">
       Map Filters
     </section>
   </main>
+  <script src="src/APIs/leaflet.js"> </script>
 </body>
 </html>
